@@ -1,220 +1,273 @@
-<!DOCTYPE html>
-<div class="logo-section">
-    <img src="155981.png" alt="Meridion Research Logo" class="logo">
-    <h1>Meridion Research</h1>
-    <p>Independent Equity Research by Naveen NK</p>
-</div>
-<html>
+ <!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Meridion Research</title>
 
 <style>
-  .report-card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-.btn{
-    background:#0a1f44;
-    color:white;
-    padding:10px 20px;
-    border-radius:8px;
-    text-decoration:none;
-}
-.logo-section{
-    text-align:center;
-    padding:40px 20px;
-}
-
-.logo{
-    width:140px;
-    height:auto;
-    margin-bottom:15px;
-}
-
-.logo-section h1{
-    font-size:2.2rem;
-    margin:10px 0;
-}
-
-.logo-section p{
-    color:#666;
-}
 body{
-font-family:Arial,sans-serif;
-margin:0;
 background:#f4f6f9;
+color:#222;
 }
 
-header{
-background:#0f172a;
-color:white;
-padding:50px;
-text-align:center;
-}
-
-header h1{
-margin:0;
-font-size:42px;
-}
-
-header p{
-color:#cbd5e1;
-}
-
-section{
+.container{
 max-width:1000px;
 margin:auto;
 padding:20px;
 }
 
-.card{
+/* Header */
+
+.header{
+text-align:center;
+padding:50px 20px;
 background:white;
-padding:20px;
-margin:15px 0;
-border-radius:12px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-.report-btn{
-background:#1d4ed8;
-color:white;
-padding:10px 15px;
-border-radius:6px;
-text-decoration:none;
+.logo{
+width:220px;
+height:auto;
+margin-bottom:20px;
 }
+
+.header h1{
+font-size:3rem;
+color:#0a1f44;
+margin-bottom:10px;
+}
+
+.header p{
+font-size:1.2rem;
+color:#666;
+}
+
+/* Banner */
+
+.banner{
+background:linear-gradient(135deg,#07152f,#0a1f44);
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+.banner h2{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.banner p{
+font-size:1.1rem;
+}
+
+/* Cards */
+
+.report-card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-top:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.report-card h2{
+margin-bottom:15px;
+color:#0a1f44;
+}
+
+.report-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+border-bottom:1px solid #eee;
+}
+
+.report-item:last-child{
+border-bottom:none;
+}
+
+.btn{
+background:#0a1f44;
+color:white;
+padding:10px 18px;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+}
+
+.btn:hover{
+background:#132d61;
+}
+
+/* About */
+
+.about{
+background:white;
+padding:30px;
+border-radius:15px;
+margin-top:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+text-align:center;
+line-height:1.8;
+}
+
+/* Footer */
 
 .footer{
 text-align:center;
 padding:40px 20px;
-margin-top:40px;
-background:#ffffff;
-border-top:1px solid #ddd;
-}
-
-.footer p{
-color:#555;
-max-width:700px;
-margin:auto;
-line-height:1.7;
-}
-
-.footer h3{
-margin-top:20px;
-letter-spacing:2px;
 }
 
 .social{
-margin-top:15px;
+margin-top:20px;
 }
 
 .social img{
-margin:10px;
+width:40px;
+margin:0 10px;
+transition:0.3s;
+}
+
+.social img:hover{
+transform:scale(1.1);
+}
+
+.name{
+font-size:24px;
+font-weight:bold;
+margin-top:20px;
+}
+
+.role{
+color:#666;
+margin-top:5px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
+<!-- HEADER -->
+
+<div class="header">
+
+<img src="155990.png" alt="Meridion Research Logo" class="logo">
+
 <h1>Meridion Research</h1>
+
+<p>Independent Equity Research by Naveen NK</p>
+
+</div>
+
+<!-- BANNER -->
+
+<div class="banner">
 
 <p>
 Independent Equity Research • Business Intelligence • Long-Term Value Investing
 </p>
-</header>
 
-<section>
+</div>
 
-<div class="card">
+<div class="container">
+
+<!-- REPORTS -->
+
+<div class="report-card">
 
 <h2>Research Reports</h2>
 
-<div class="report-card">
-    <h3>Pharmaceutical Sector</h3>
-    <a href="Indian_Pharmaceutical_Report.pdf" class="btn">
-        Download Report
-    </a>
+<div class="report-item">
+<span>💊 Pharmaceutical Sector Report 2026</span>
+<a href="Indian_Pharmaceutical_Equity_Research_Report_NAVEEN_NK_2026_FINAL.pdf"
+class="btn"
+download>
+Download Report
+</a>
 </div>
 
-<div class="report-card">
-    <h3>Banking Sector</h3>
-    <span>Available Soon</span>
+<div class="report-item">
+<span>🏦 Banking Sector Report 2026 — Available Soon</span>
 </div>
 
-<div class="report-card">
-    <h3>Automobile Sector</h3>
-    <span>Available Soon</span>
+<div class="report-item">
+<span>🚗 Automobile Sector Report 2026 — Available Soon</span>
 </div>
 
-<div class="report-card">
-    <h3>FMCG Sector</h3>
-    <span>Available Soon</span>
+<div class="report-item">
+<span>🛒 FMCG Sector Report 2026 — Available Soon</span>
 </div>
 
-<div class="report-card">
-    <h3>Information Technology Sector</h3>
-    <span>Available Soon</span>
-</div>
+<div class="report-item">
+<span>💻 Information Technology Sector Report 2026 — Available Soon</span>
 </div>
 
-<div class="card">
+</div>
+
+<!-- METHODOLOGY -->
+
+<div class="report-card">
 
 <h2>Research Methodology</h2>
 
 <p>📊 Financial Analysis</p>
+<br>
 
 <p>📈 Industry & Competitive Analysis</p>
+<br>
 
 <p>⚠️ Risk Assessment</p>
+<br>
 
 <p>💎 Long-Term Value Investing</p>
 
 </div>
 
-</section>
+<!-- ABOUT -->
 
-<footer class="footer">
+<div class="about">
 
 <p>
-
 Meridion Research is an independent research initiative focused on equity analysis,
-business intelligence, and long-term value creation. Built on the principles of
-patience, disciplined thinking, and continuous learning.
-
+business intelligence, and long-term value creation.
+Built on the principles of patience, disciplined thinking,
+and continuous learning.
 </p>
 
-<h3>NAVEEN NK</h3>
+</div>
 
-<p>Founder & Research Author</p>
+<!-- FOOTER -->
+
+<div class="footer">
+
+<div class="name">NAVEEN NK</div>
+
+<div class="role">Founder & Research Author</div>
 
 <div class="social">
 
-<a href="https://instagram.com/naveen.tac" target="_blank">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-width="42">
-
+<a href="https://www.instagram.com/" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 </a>
 
 <a href="mailto:naveenkumartavor@gmail.com">
-
-<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-width="42">
-
+<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
 </a>
 
 </div>
 
-</p>
-
-</footer>
+</div>
 
 </body>
 </html>
