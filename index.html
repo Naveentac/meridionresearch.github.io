@@ -3,271 +3,417 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Meridion Research</title>
+<title>Meridion Research | Equity Analysis & Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  :root {
+    --bg-main: #0b0f19;
+    --bg-card: #131b2e;
+    --bg-card-hover: #1a253e;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --radius-lg: 16px;
+    --radius-md: 10px;
+    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
 
-body{
-background:#f4f6f9;
-color:#222;
-}
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
+  /* Subtle background glow effect */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(11, 15, 25, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+  }
 
-/* Header */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
 
-.header{
-text-align:center;
-padding:50px 20px;
-background:white;
-}
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 0 30px;
+  }
 
-.logo{
-width:220px;
-height:auto;
-margin-bottom:20px;
-}
+  .logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  }
 
-.header h1{
-font-size:3rem;
-color:#0a1f44;
-margin-bottom:10px;
-}
+  .header h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
 
-.header p{
-font-size:1.2rem;
-color:#666;
-}
+  .header .author {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
 
-/* Banner */
+  /* Banner */
+  .banner {
+    background: linear-gradient(135deg, rgba(19, 27, 46, 0.8), rgba(26, 37, 62, 0.6));
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    padding: 24px 30px;
+    text-align: center;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+  }
 
-.banner{
-background:linear-gradient(135deg,#07152f,#0a1f44);
-color:white;
-padding:50px 20px;
-text-align:center;
-}
+  .banner p {
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
 
-.banner h2{
-font-size:2rem;
-margin-bottom:10px;
-}
+  /* Section Cards */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
 
-.banner p{
-font-size:1.1rem;
-}
+  .card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-/* Cards */
+  /* Reports List */
+  .report-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 
-.report-card{
-background:white;
-padding:25px;
-border-radius:15px;
-margin-top:20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
-}
+  .report-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+  }
 
-.report-card h2{
-margin-bottom:15px;
-color:#0a1f44;
-}
+  .report-item:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+  }
 
-.report-item{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
-border-bottom:1px solid #eee;
-}
+  .report-item.disabled {
+    opacity: 0.6;
+  }
 
-.report-item:last-child{
-border-bottom:none;
-}
+  .report-item.disabled:hover {
+    border-color: var(--border-color);
+    background: rgba(255, 255, 255, 0.02);
+  }
 
-.btn{
-background:#0a1f44;
-color:white;
-padding:10px 18px;
-border-radius:8px;
-text-decoration:none;
-font-size:14px;
-}
+  .report-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
 
-.btn:hover{
-background:#132d61;
-}
+  .status-badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--text-muted);
+    font-weight: 500;
+  }
 
-/* About */
+  .btn {
+    background: var(--accent);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-.about{
-background:white;
-padding:30px;
-border-radius:15px;
-margin-top:20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
-text-align:center;
-line-height:1.8;
-}
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px var(--accent-glow);
+    background: #7dd3fc;
+  }
 
-/* Footer */
+  /* Methodology Grid */
+  .methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
 
-.footer{
-text-align:center;
-padding:40px 20px;
-}
+  .method-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
 
-.social{
-margin-top:20px;
-}
+  .method-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.3);
+  }
 
-.social img{
-width:40px;
-margin:0 10px;
-transition:0.3s;
-}
+  .method-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    display: block;
+  }
 
-.social img:hover{
-transform:scale(1.1);
-}
+  .method-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
 
-.name{
-font-size:24px;
-font-weight:bold;
-margin-top:20px;
-}
+  /* About */
+  .about-text {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+  }
 
-.role{
-color:#666;
-margin-top:5px;
-}
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 50px 0 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+  }
 
+  .footer .name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+  }
+
+  .footer .role {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .social-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .social-btn img {
+    width: 20px;
+    height: 20px;
+    filter: invert(0.8);
+  }
+
+  /* Mobile Tweaks */
+  @media (max-width: 640px) {
+    .header h1 { font-size: 2.1rem; }
+    .report-item { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .btn { width: 100%; justify-content: center; }
+  }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<div class="header">
-
-<img src="155990.png" alt="Meridion Research Logo" class="logo">
-
-<h1>Meridion Research</h1>
-
-<p>Independent Equity Research by Naveen NK</p>
-
-</div>
-
-<!-- BANNER -->
-
-<div class="banner">
-
-<p>
-Independent Equity Research • Business Intelligence • Long-Term Value Investing
-</p>
-
-</div>
-
 <div class="container">
 
-<!-- REPORTS -->
+  <!-- HEADER -->
+  <header class="header">
+    <img src="155990.png" alt="Meridion Research Logo" class="logo">
+    <h1>Meridion Research</h1>
+    <p class="author">Independent Equity Research by Naveen NK</p>
+  </header>
 
-<div class="report-card">
+  <!-- BANNER -->
+  <div class="banner">
+    <p>Independent Equity Research &bull; Business Intelligence &bull; Long-Term Value Investing</p>
+  </div>
 
-<h2>Research Reports</h2>
+  <!-- REPORTS -->
+  <section class="card">
+    <h2 class="card-title">Research Reports</h2>
+    
+    <div class="report-list">
+      <div class="report-item">
+        <div class="report-info">
+          <span>💊</span>
+          <span>Pharmaceutical Sector Report 2026</span>
+        </div>
+        <a href="Indian_Pharmaceutical_Equity_Research_Report_NAVEEN_NK_2026_FINAL.pdf" class="btn" download>
+          Download PDF
+        </a>
+      </div>
 
-<div class="report-item">
-<span>💊 Pharmaceutical Sector Report 2026</span>
-<a href="Indian_Pharmaceutical_Equity_Research_Report_NAVEEN_NK_2026_FINAL.pdf"
-class="btn"
-download>
-Download Report
-</a>
-</div>
+      <div class="report-item disabled">
+        <div class="report-info">
+          <span>🏦</span>
+          <span>Banking Sector Report 2026</span>
+        </div>
+        <span class="status-badge">Coming Soon</span>
+      </div>
 
-<div class="report-item">
-<span>🏦 Banking Sector Report 2026 — Available Soon</span>
-</div>
+      <div class="report-item disabled">
+        <div class="report-info">
+          <span>🚗</span>
+          <span>Automobile Sector Report 2026</span>
+        </div>
+        <span class="status-badge">Coming Soon</span>
+      </div>
 
-<div class="report-item">
-<span>🚗 Automobile Sector Report 2026 — Available Soon</span>
-</div>
+      <div class="report-item disabled">
+        <div class="report-info">
+          <span>🛒</span>
+          <span>FMCG Sector Report 2026</span>
+        </div>
+        <span class="status-badge">Coming Soon</span>
+      </div>
 
-<div class="report-item">
-<span>🛒 FMCG Sector Report 2026 — Available Soon</span>
-</div>
+      <div class="report-item disabled">
+        <div class="report-info">
+          <span>💻</span>
+          <span>Information Technology Sector Report 2026</span>
+        </div>
+        <span class="status-badge">Coming Soon</span>
+      </div>
+    </div>
+  </section>
 
-<div class="report-item">
-<span>💻 Information Technology Sector Report 2026 — Available Soon</span>
-</div>
+  <!-- METHODOLOGY -->
+  <section class="card">
+    <h2 class="card-title">Research Methodology</h2>
+    <div class="methodology-grid">
+      <div class="method-card">
+        <span class="method-icon">📊</span>
+        <span class="method-title">Financial Analysis</span>
+      </div>
+      <div class="method-card">
+        <span class="method-icon">📈</span>
+        <span class="method-title">Industry Analysis</span>
+      </div>
+      <div class="method-card">
+        <span class="method-icon">⚠️</span>
+        <span class="method-title">Risk Assessment</span>
+      </div>
+      <div class="method-card">
+        <span class="method-icon">💎</span>
+        <span class="method-title">Value Investing</span>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <!-- ABOUT -->
+  <section class="card">
+    <p class="about-text">
+      Meridion Research is an independent research initiative focused on equity analysis,
+      business intelligence, and long-term value creation.
+      Built on the principles of patience, disciplined thinking,
+      and continuous learning.
+    </p>
+  </section>
 
-<!-- METHODOLOGY -->
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="name">NAVEEN NK</div>
+    <div class="role">Founder & Research Author</div>
 
-<div class="report-card">
+    <div class="social-links">
+      <a href="https://www.instagram.com/" target="_blank" class="social-btn" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
 
-<h2>Research Methodology</h2>
-
-<p>📊 Financial Analysis</p>
-<br>
-
-<p>📈 Industry & Competitive Analysis</p>
-<br>
-
-<p>⚠️ Risk Assessment</p>
-<br>
-
-<p>💎 Long-Term Value Investing</p>
-
-</div>
-
-<!-- ABOUT -->
-
-<div class="about">
-
-<p>
-Meridion Research is an independent research initiative focused on equity analysis,
-business intelligence, and long-term value creation.
-Built on the principles of patience, disciplined thinking,
-and continuous learning.
-</p>
-
-</div>
-
-<!-- FOOTER -->
-
-<div class="footer">
-
-<div class="name">NAVEEN NK</div>
-
-<div class="role">Founder & Research Author</div>
-
-<div class="social">
-
-<a href="https://www.instagram.com/" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
-
-<a href="mailto:naveenkumartavor@gmail.com">
-<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
-</a>
-
-</div>
+      <a href="mailto:naveenkumartavor@gmail.com" class="social-btn" title="Email">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+      </a>
+    </div>
+  </footer>
 
 </div>
 
 </body>
 </html>
+
