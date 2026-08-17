@@ -15,7 +15,47 @@ padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
+.dashboard-table{
+width:100%;
+border-collapse:collapse;
+}
 
+.dashboard-table th{
+background:#0a1f44;
+color:white;
+padding:15px;
+text-align:left;
+}
+
+.dashboard-table td{
+padding:15px;
+border-bottom:1px solid #eee;
+}
+
+.dashboard-table a{
+color:#0077ff;
+text-decoration:none;
+font-weight:600;
+}
+
+.stocks{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+}
+
+.stock-box{
+background:#f8f9fc;
+padding:20px;
+border-radius:12px;
+text-align:center;
+transition:.3s;
+}
+
+.stock-box:hover{
+transform:translateY(-5px);
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
 body{
 background:#f5f7fb;
 color:#222;
@@ -167,50 +207,78 @@ sector intelligence, valuation and business analysis.
 </p>
 
 </div>
-
 <div class="card">
 
-<h2>📈 Live Market Dashboard</h2>
+<h2>📈 Market Dashboard</h2>
 
-<div class="tradingview-widget-container">
+<table class="dashboard-table">
 
-<script type="text/javascript"
-src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"
-async>
-{
-"colorTheme":"light",
-"showChart":true,
-"locale":"en",
-"width":"100%",
-"height":"550",
-"tabs":[
-{
-"title":"Indices",
-"symbols":[
-{"s":"NSE:NIFTY"},
-{"s":"BSE:SENSEX"}
-]
-},
-{
-"title":"Watchlist",
-"symbols":[
-{"s":"NSE:ITC"},
-{"s":"NSE:TCS"},
-{"s":"NSE:NATCOPHARM"},
-{"s":"NSE:CIPLA"},
-{"s":"NSE:DRREDDY"},
-{"s":"NSE:TATAMOTORS"}
-]
-}
-]
-}
-</script>
+<tr>
+<th>Market Index</th>
+<th>Live Link</th>
+</tr>
 
-</div>
+<tr>
+<td>NIFTY 50</td>
+<td>
+<a href="https://www.tradingview.com/symbols/NSE-NIFTY/" target="_blank">
+View Live →
+</a>
+</td>
+</tr>
+
+<tr>
+<td>SENSEX</td>
+<td>
+<a href="https://www.tradingview.com/symbols/BSE-SENSEX/" target="_blank">
+View Live →
+</a>
+</td>
+</tr>
+
+</table>
 
 </div>
 <div class="card">
+<div class="card">
 
+<h2>⭐ Featured Stocks</h2>
+
+<div class="stocks">
+
+<div class="stock-box">
+<h3>ITC</h3>
+<p>Research Coverage</p>
+</div>
+
+<div class="stock-box">
+<h3>TCS</h3>
+<p>Research Coverage</p>
+</div>
+
+<div class="stock-box">
+<h3>CIPLA</h3>
+<p>Research Coverage</p>
+</div>
+
+<div class="stock-box">
+<h3>DR REDDY'S</h3>
+<p>Research Coverage</p>
+</div>
+
+<div class="stock-box">
+<h3>TATA MOTORS</h3>
+<p>Research Coverage</p>
+</div>
+
+<div class="stock-box">
+<h3>NATCO PHARMA</h3>
+<p>Research Coverage</p>
+</div>
+
+</div>
+
+</div>
 <h2>Research Reports</h2>
 
 <div class="report-item">
