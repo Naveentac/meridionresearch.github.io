@@ -11,6 +11,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* MARKET DASHBOARD */
+
+.market-table{
+overflow-x:auto;
+}
+
+.market-table table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.market-table th{
+background:linear-gradient(135deg,#0077ff,#00c6ff);
+padding:15px;
+text-align:left;
+color:white;
+}
+
+.market-table td{
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.market-table tr:hover{
+background:rgba(255,255,255,0.05);
+}
+
+.section td{
+background:rgba(0,198,255,0.15);
+font-weight:600;
+color:#4cc9f0;
+}
 
 *{
 margin:0;
@@ -136,6 +169,85 @@ transform:translateY(-4px);
 color:#4cc9f0;
 margin-bottom:20px;
 }
+<!-- MARKET DASHBOARD -->
+
+<div class="card">
+
+<h2>📈 Market Dashboard</h2>
+
+<div class="market-table">
+
+<table>
+
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Live Price</th>
+<th>Change</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>NIFTY 50</td>
+<td id="nifty">Loading...</td>
+<td id="niftychange">-</td>
+</tr>
+
+<tr>
+<td>SENSEX</td>
+<td id="sensex">Loading...</td>
+<td id="sensexchange">-</td>
+</tr>
+
+<tr class="section">
+<td colspan="3">WATCHLIST</td>
+</tr>
+
+<tr>
+<td>ITC</td>
+<td id="itc">Loading...</td>
+<td id="itcchange">-</td>
+</tr>
+
+<tr>
+<td>TCS</td>
+<td id="tcs">Loading...</td>
+<td id="tcschange">-</td>
+</tr>
+
+<tr>
+<td>NATCO Pharma</td>
+<td id="natco">Loading...</td>
+<td id="natcochange">-</td>
+</tr>
+
+<tr>
+<td>Cipla</td>
+<td id="cipla">Loading...</td>
+<td id="ciplachange">-</td>
+</tr>
+
+<tr>
+<td>Dr Reddy's</td>
+<td id="drreddy">Loading...</td>
+<td id="drreddychange">-</td>
+</tr>
+
+<tr>
+<td>Tata Motors</td>
+<td id="tatamotors">Loading...</td>
+<td id="tatamotorschange">-</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
 
 /* Reports */
 
